@@ -9,9 +9,9 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-from typing import Union
+
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL
 import random
 
 ## After Edits with Timer Bar
@@ -37,7 +37,7 @@ selections = [
 ## After Edits with Timer Bar
 
 
-def stream_markup_timer(_, videoid, chat_id, played, dur, OWNER: Union[bool, int] = None):
+def stream_markup_timer(_, videoid, chat_id, played, dur):
     bar = random.choice(selections)
     buttons = [
         [
@@ -51,7 +51,6 @@ def stream_markup_timer(_, videoid, chat_id, played, dur, OWNER: Union[bool, int
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", user_id=config.OWNER_ID),
         ],
         [
             InlineKeyboardButton(
@@ -70,7 +69,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur, OWNER: Union[bool, int
     return buttons
 
 
-def telegram_markup_timer(_, videoid, chat_id, played, dur, OWNER: Union[bool, int] = None):
+def telegram_markup_timer(_, videoid, chat_id, played, dur):
     bar = random.choice(selections)
     buttons = [
         [
@@ -84,7 +83,6 @@ def telegram_markup_timer(_, videoid, chat_id, played, dur, OWNER: Union[bool, i
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", user_id=config.OWNER_ID),
         ],
         [
             InlineKeyboardButton(
@@ -100,14 +98,13 @@ def telegram_markup_timer(_, videoid, chat_id, played, dur, OWNER: Union[bool, i
 ## Inline without Timer Bar
 
 
-def stream_markup(_, videoid, chat_id, OWNER: Union[bool, int] = None):
+def stream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", user_id=config.OWNER_ID),
         ],
         [
             InlineKeyboardButton(
