@@ -84,7 +84,7 @@ def telegram_markup_timer(_, videoid, chat_id, played, dur):
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", url=f"https://t.me/Hakutaka_Gemini"),
+            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", user_id=config.OWNER_ID),
         ],
         [
             InlineKeyboardButton(
@@ -107,7 +107,7 @@ def stream_markup(_, videoid, chat_id):
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", url=f"https://t.me/Hakutaka_Gemini"),
+            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", user_id=config.OWNER_ID),
         ],
         [
             InlineKeyboardButton(
