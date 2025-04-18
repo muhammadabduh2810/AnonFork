@@ -11,7 +11,7 @@ as you want or you can collabe if you have new ideas.
 
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
 import random
 
 ## After Edits with Timer Bar
@@ -51,7 +51,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", url=f"https://t.me/Hakutaka_Gemini"),
+            InlineKeyboardButton(text="𝖮𝗐𝗇𝖾𝗋", user_id=config.OWNER_ID),
         ],
         [
             InlineKeyboardButton(
