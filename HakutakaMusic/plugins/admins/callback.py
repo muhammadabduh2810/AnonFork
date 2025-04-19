@@ -350,9 +350,10 @@ async def del_back_playlist(client, CallbackQuery, _):
         if int(command) in [1, 2]:
             duration_to_skip = 10
             try:
-              if int(command) in [1, 2]:
+                if int(command) in [1, 2]:
+                  pass
             except ValueError:
-              pass 
+                pass 
         else:
             duration_to_skip = 30
         duration = playing[0]["dur"]
